@@ -1,5 +1,7 @@
-# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+# Build Folders
+bin
 obj
+packages
 
 # mstest test results
 TestResults
@@ -7,3 +9,4 @@ TestResults
 # VS
 *.suo
 *.sdf
+*.user

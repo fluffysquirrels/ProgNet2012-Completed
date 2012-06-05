@@ -96,11 +96,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HostedWithPlasma.cs" />
-    <Compile Include="HostedWithCassiniDev.cs" />
+    <Compile Include="Lib\IisExpressWrapper.cs" />
+    <Compile Include="Tests\HostedWithIisExpress.cs" />
+    <Compile Include="Tests\HostedWithPlasma.cs" />
+    <Compile Include="Tests\HostedWithCassiniDev.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Timer.cs" />
+    <Compile Include="Lib\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

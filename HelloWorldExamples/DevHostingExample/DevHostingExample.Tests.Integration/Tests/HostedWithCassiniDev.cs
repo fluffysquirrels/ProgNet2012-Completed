@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using DevHostingExample.Tests.Integration.Lib;
 using NUnit.Framework;
 using CassiniDev;
 
-namespace DevHostingExample.Tests.Integration
+namespace DevHostingExample.Tests.Integration.Tests
 {
     [TestFixture]
     public class HostedWithCassiniDev

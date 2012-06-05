@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
+using DevHostingExample.Tests.Integration.Lib;
 using NUnit.Framework;
 using Plasma.Core;
 
-namespace DevHostingExample.Tests.Integration
+namespace DevHostingExample.Tests.Integration.Tests
 {
     [TestFixture]
     public class HostedWithPlasma

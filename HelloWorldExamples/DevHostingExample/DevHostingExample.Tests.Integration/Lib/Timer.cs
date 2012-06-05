@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace DevHostingExample.Tests.Integration
+namespace DevHostingExample.Tests.Integration.Lib
 {
     internal static class Timer
     {

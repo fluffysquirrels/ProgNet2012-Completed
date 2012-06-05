@@ -24,7 +24,7 @@ namespace DevHostingExample.Tests.Integration.Tests
 
                     // Make first request to ensure app is started
                     var wc = new WebClient();
-                    wc.DownloadString(_iew.RootUrl + "Default.aspx");
+                    wc.DownloadString(_iew.RootUrl.TrimEnd('/') + TestConstants.TestPath);
                 });
         }
 
@@ -49,9 +49,9 @@ namespace DevHostingExample.Tests.Integration.Tests
                 {
                     foreach (int i in Enumerable.Range(0, repeats))
                     {
-                        var cq = CsQuery.Server.CreateFromUrl(_iew.RootUrl);
+                        var cq = CsQuery.Server.CreateFromUrl(_iew.RootUrl.TrimEnd('/') + TestConstants.TestPath);
                         var text = cq.Text();
-                        Assert.That(text, Contains.Substring("Modify this template to jump-start your ASP.NET application"));
+                        Assert.That(text, Contains.Substring(TestConstants.TextOnTestPath));
                     }
                 });
         }

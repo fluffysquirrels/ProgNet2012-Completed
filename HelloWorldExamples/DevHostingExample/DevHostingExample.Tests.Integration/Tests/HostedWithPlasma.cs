@@ -28,7 +28,7 @@ namespace DevHostingExample.Tests.Integration.Tests
                     // Make first request to ensure app is started
                     var client =
                         new Plasma.Http.HttpPlasmaClient(_plasmaApplication);
-                    client.Get("/Default.aspx");
+                    client.Get(TestConstants.TestPath);
                 });
         }
 
@@ -49,11 +49,11 @@ namespace DevHostingExample.Tests.Integration.Tests
                     foreach (int i in Enumerable.Range(0, repeats))
                     {
                         var client = new Plasma.Http.HttpPlasmaClient(_plasmaApplication);
-                        var response = client.Get("/Default.aspx");
+                        var response = client.Get(TestConstants.TestPath);
                         var html = response.GetBody();
 
                         var dom = CsQuery.CQ.Create(html);
-                        Assert.That(dom.Text(), Contains.Substring("Modify this template to jump-start your ASP.NET application"));
+                        Assert.That(dom.Text(), Contains.Substring(TestConstants.TextOnTestPath));
                     }
                 });
         }

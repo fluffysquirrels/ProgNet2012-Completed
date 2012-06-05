@@ -24,7 +24,7 @@ namespace DevHostingExample.Tests.Integration.Tests
                         Console.WriteLine("Starting server for project path '{0}' . . .", projectPath);
                         _server.StartServer(projectPath);
 
-                        string rootUrl = _server.NormalizeUrl("/");
+                        string rootUrl = _server.NormalizeUrl(TestConstants.TestPath);
                         Console.WriteLine("Root URL: '{0}'", rootUrl);
 
                         // Make first request to ensure app is started
@@ -55,9 +55,9 @@ namespace DevHostingExample.Tests.Integration.Tests
                     {
                         foreach (int i in Enumerable.Range(0, repeats))
                         {
-                            string rootUrl = _server.NormalizeUrl("/");
+                            string rootUrl = _server.NormalizeUrl(TestConstants.TestPath);
                             var dom = CsQuery.Server.CreateFromUrl(rootUrl);
-                            Assert.That(dom.Text(), Contains.Substring("Modify this template to jump-start your ASP.NET application"));
+                            Assert.That(dom.Text(), Contains.Substring(TestConstants.TextOnTestPath));
                         }
                     });
         }

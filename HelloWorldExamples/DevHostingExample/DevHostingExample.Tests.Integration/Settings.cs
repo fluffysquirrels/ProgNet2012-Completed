@@ -8,6 +8,22 @@ namespace DevHostingExample.Tests.Integration
         private readonly static System.Lazy<DirectoryInfo> _solutionPath =
             new System.Lazy<DirectoryInfo>(GetSolutionPath, LazyThreadSafetyMode.ExecutionAndPublication);
 
+        public static string WebProjectPath
+        {
+            get
+            {
+                return SolutionPath.FullName.TrimEnd('\\') + @"\DevHostingExample.Web";
+            }
+        }
+
+        public static DirectoryInfo SolutionPath
+        {
+            get
+            {
+                return _solutionPath.Value;
+            }
+        }
+
         private static DirectoryInfo GetSolutionPath()
         {
             var thisAssembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -38,22 +54,6 @@ The CodeBase was '{1}'.",
                     .Parent;    // e.g. Solution
             
             return solutionDirectory;
-        }
-
-        public static string WebProjectPath
-        {
-            get
-            {
-                return SolutionPath.FullName.TrimEnd('\\') + @"\DevHostingExample.Web.WebForms";
-            }
-        }
-
-        public static DirectoryInfo SolutionPath
-        {
-            get
-            {
-                return _solutionPath.Value;
-            }
         }
     }
 }

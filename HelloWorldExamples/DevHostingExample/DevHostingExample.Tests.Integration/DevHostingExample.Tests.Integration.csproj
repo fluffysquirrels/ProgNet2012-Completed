@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lib\IisExpressWrapper.cs" />
+    <Compile Include="TestConstants.cs" />
     <Compile Include="Tests\HostedWithIisExpress.cs" />
     <Compile Include="Tests\HostedWithPlasma.cs" />
     <Compile Include="Tests\HostedWithCassiniDev.cs" />
